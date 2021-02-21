@@ -96,11 +96,11 @@ func main() {
 	ctx, cancel = context.WithTimeout(context.Background(), 5*time.Second)
 
 	if err = srv.Shutdown(ctx); err != nil {
-		log.Printf("server shutdown: %v", err)
+		log.Println("server shutdown:", err)
 	}
 
 	cancel()
-	log.Printf("server exit")
+	log.Println("server exit")
 }
 
 func SetLogRFC3339ms() {
